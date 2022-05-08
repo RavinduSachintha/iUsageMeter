@@ -1,0 +1,46 @@
+<installation version="5.0" xmlns:izpack="http://izpack.org/schema/installation"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://izpack.org/schema/installation http://izpack.org/schema/5.0/izpack-installation-5.0.xsd">
+    <info>
+        <appname>iUsageMeter</appname>
+        <appversion>0.1</appversion>
+        <appsubpath>app</appsubpath>
+        <javaversion>11</javaversion>
+    </info>
+
+    <locale>
+        <langpack iso3="eng"/>
+    </locale>
+
+    <panels>
+        <panel classname="HelloPanel"></panel>
+        <panel classname="TargetPanel">
+            <validator classname="com.izforge.izpack.installer.validator.ConditionValidator"/>
+        </panel>
+    </panels>
+
+    <packs>
+        <pack name="Core files" required="no" id="pack.core">
+            <description>Core files</description>
+<!--            <fileset dir="@{staging.dir}" override="true">-->
+<!--                <exclude name="*.zip" />-->
+<!--                <exclude name="conf/*.properties" />-->
+<!--                <exclude name="conf/*.xml" />-->
+<!--            </fileset>-->
+<!--            <parsable type="shell">-->
+<!--                <fileset>-->
+<!--                    <include name="**/*.sh" />-->
+<!--                </fileset>-->
+<!--            </parsable>-->
+<!--            <executable>-->
+<!--                <fileset>-->
+<!--                    <include name="**/*.sh" />-->
+<!--                </fileset>-->
+<!--            </executable>-->
+        </pack>
+    </packs>
+
+    <variables>
+        <variable name="RESOURCEROOT" value="src/main/izpack"/>
+    </variables>
+</installation>
